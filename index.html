@@ -75,6 +75,14 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
   // Add your code here!
+  $("article img").addClass("image-center");
+  $("article p:last-child").remove();
+  const randSize = `${Math.floor(Math.random() * 100)}px`;
+  // const randSize = "" + Math.floor(Math.random() * 100) + "px";
+  $("#title").css("font-size", randSize);
+  $("ol").append($("<li>").text("I'm a cool list item!"));
+  $("aside").html("");
+  $("aside").append($("<p>").text("We're sorry that the list ever existed!"))
 </script>
 </body>
 
