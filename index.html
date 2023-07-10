@@ -83,18 +83,24 @@
   $("ol").append($("<li>").text("I'm a cool list item!"));
   $("aside").html("");
   $("aside").append($("<p>").text("We're sorry that the list ever existed!"));
-
-    function updateBackgroundColor(evt) {
-    const redAmt = $(".form-control").parent().parent().children(":nth-child(1)").children(":nth-child(1)").val();
-    const blueAmt = $(".form-control").parent().parent().children(":nth-child(2)").children(":nth-child(1)").val();
-    const greenAmt = $(".form-control").parent().parent().children(":nth-child(3)").children(":nth-child(1)").val();
+  function updateBackgroundColor(evt) {
+    // const redAmt = $(".form-control:eq(0)").val();
+    // const blueAmt = $(".form-control:eq(1)").val();
+    // const greenAmt = $(".form-control:eq(2)").val();
+    const redAmt = $(".form-control").eq(0).val();
+    const blueAmt = $(".form-control").eq(1).val();
+    const greenAmt = $(".form-control").eq(2).val();
+    // const redAmt = $(".form-control").parent().parent().children(":nth-child(1)").children(":nth-child(1)").val();
+    // const blueAmt = $(".form-control").parent().parent().children(":nth-child(2)").children(":nth-child(1)").val();
+    // const greenAmt = $(".form-control").parent().parent().children(":nth-child(3)").children(":nth-child(1)").val();
     $("body").css("background", `rgb(${redAmt}, ${blueAmt}, ${greenAmt})`);
   }
-    $(".form-control").on("change", updateBackgroundColor);
-
-
-
-
+  $(".form-control").on("change", updateBackgroundColor);
+  $("img").on("click", removeFromDom);
+  function removeFromDom(evt) {
+    $(evt.target).remove();
+    // $("img").remove();
+  }
 </script>
 </body>
 
